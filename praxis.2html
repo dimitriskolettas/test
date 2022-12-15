@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Πράξεις</title>
+<style>
+label,input,#ap{
+  margin:0.5em;
+  padding:0.5em;
+}
+#ap{
+  color:blue;
+  font-size:2em;
+  
+}
+input[type=button]{
+  background-color: lightgray;
+  font-size:1.5em;
+  border: 1px solid;
+  color: black;
+  padding: 10px 15px;
+  font-weight:bold;
+  margin: 2px 2px;
+  cursor: pointer;
+  width:40px;
+  }
+</style>
+<script>
+    function prosthesi(){
+    var a1=Number(document.querySelector("#n1").value);
+    var a2=Number(document.querySelector("#n2").value);
+    var ap=document.querySelector("#ap");
+    var c=a1+a2;
+    ap.innerHTML=c;
+    }
+	function afairesi(){
+    var a1=Number(document.querySelector("#n1").value);
+    var a2=Number(document.querySelector("#n2").value);
+    var ap=document.querySelector("#ap");
+    var c=a1-a2;
+    ap.innerHTML=c;
+    }
+	function pollaplasiasmos(){
+    var a1=Number(document.querySelector("#n1").value);
+    var a2=Number(document.querySelector("#n2").value);
+    var ap=document.querySelector("#ap");
+    var c=a1*a2;
+    ap.innerHTML=c;
+    }
+	function diairesi(){
+    var a1=Number(document.querySelector("#n1").value);
+    var a2=Number(document.querySelector("#n2").value);
+    var ap=document.querySelector("#ap");
+    var c=a1/a2;
+    ap.innerHTML=c;
+    }
+	function katharise(){
+    var a1=document.querySelector("#n1");
+    var a2=document.querySelector("#n2");
+    var ap=document.querySelector("#ap");
+    a1.value=0;
+	a2.value=0;
+    ap.innerHTML="Σύνολο";
+    }
+  </script>
+</head>
+<body>
+  <label>1ος αριθμός </label>
+<input type="number" min=0 max=999 size="3" value=0 id="n1">
+  <br>
+  <label>2ος αριθμός </label>
+<input type="number" min=0 max=999 size="3" value=0 id="n2"> <br>
+  <input type="button" value="+" onclick="prosthesi()">
+  <input type="button" value="-" onclick="afairesi()">
+  <input type="button" value="*" onclick="pollaplasiasmos()">
+  <input type="button" value="/" onclick="diairesi()">
+  <input type="button" value="C" onclick="katharise()">
+  <br>
+  <div id="ap">
+  Σύνολο:
+  </div>
+</body>
+</html>
